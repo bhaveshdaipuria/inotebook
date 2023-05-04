@@ -55,7 +55,7 @@ const NoteState = ({ children }) => {
   //Edit an existing note
   const editNote = async (id, title, description, tag) => {
     const response = await fetch(`${host}/api/notes/updatenote/${id}`, {
-      method: "PUT",
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
         "auth-token":
@@ -65,12 +65,13 @@ const NoteState = ({ children }) => {
     });
 
     let newNotes = JSON.parse(JSON.stringify(notes));
+    console.log(json);
     for (let index = 0; index < notes.length; index++) {
       const element = notes[index];
       if (element._id === id) {
-        newNotes[index].title = title;
-        newNotes[index].description = description;
-        newNotes[index].tag = tag;
+        element.title = title;
+        element.description = description;
+        element.tag = tag;
         break;
       }
     }

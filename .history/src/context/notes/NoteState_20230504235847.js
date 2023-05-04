@@ -68,9 +68,9 @@ const NoteState = ({ children }) => {
     for (let index = 0; index < notes.length; index++) {
       const element = notes[index];
       if (element._id === id) {
-        newNotes[index].title = title;
-        newNotes[index].description = description;
-        newNotes[index].tag = tag;
+        element.title = title;
+        element.description = description;
+        element.tag = tag;
         break;
       }
     }
