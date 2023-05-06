@@ -15,7 +15,7 @@ const Notes = () => {
     const [note, setNote] = useState({id: "", etitle: "", edescription: "", etag: ""})
 
     const updateNote = (currentNote) => {
-        ref.current.click();
+        ref.current.hover();
         setNote({id: currentNote._id, etitle: currentNote.title, edescription: currentNote.description, etag:currentNote.tag})
     }
 

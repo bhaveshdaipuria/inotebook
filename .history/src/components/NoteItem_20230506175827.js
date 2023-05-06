@@ -19,9 +19,9 @@ const Noteitem = (props) => {
                     </div>
                     <p className="card-text">{note.description}</p>
                 </div>
-                <Badge tagProp={note.tag}/>
             </div>
         </div>
+        <Badge/>
         </>
         
     )

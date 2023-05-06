@@ -19,13 +19,14 @@ const Notes = () => {
         setNote({id: currentNote._id, etitle: currentNote.title, edescription: currentNote.description, etag:currentNote.tag})
     }
 
-    const handleClick = ()=>{ 
+    const handleClick = (e)=>{ 
         editNote(note.id, note.etitle, note.edescription, note.etag)
         refClose.current.click();
     }
 
     const onChange = (e)=>{
-        setNote({...note, [e.target.name]: e.target.value})
+        setNote({...note, e.target.name: [e.target.value]})
+        console.log(e.target.value);
     }
 
     return (
@@ -42,11 +43,11 @@ const Notes = () => {
                         <div className="modal-body">
                             <form className="my-3">
                                 <div className="mb-3">
-                                    <label htmlFor="etitle" className="form-label">Title</label>
+                                    <label htmlFor="title" className="form-label">Title</label>
                                     <input type="text" className="form-control" id="etitle" name="etitle" value={note.etitle} aria-describedby="emailHelp" onChange={onChange} minLength={5} required/>
                                 </div>
                                 <div className="mb-3">
-                                    <label htmlFor="edescription" className="form-label">Description</label>
+                                    <label htmlFor="description" className="form-label">Description</label>
                                     <input type="text" className="form-control" id="edescription" name="edescription" value={note.edescription} onChange={onChange} minLength={5} required/>
                                 </div>
                                 <div className="mb-3">

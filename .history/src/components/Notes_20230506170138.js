@@ -19,7 +19,7 @@ const Notes = () => {
         setNote({id: currentNote._id, etitle: currentNote.title, edescription: currentNote.description, etag:currentNote.tag})
     }
 
-    const handleClick = ()=>{ 
+    const handleClick = (e)=>{ 
         editNote(note.id, note.etitle, note.edescription, note.etag)
         refClose.current.click();
     }

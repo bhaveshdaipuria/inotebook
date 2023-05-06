@@ -5,7 +5,6 @@ const NoteState = ({ children }) => {
   const host = "http://localhost:9000";
   const notesInitial = [];
   const [notes, setNotes] = useState(notesInitial);
-  
   //Get notes
   const getNotes = async () => {
     const response = await fetch(`${host}/api/notes/fetchallnotes/`, {
@@ -31,7 +30,6 @@ const NoteState = ({ children }) => {
       body: JSON.stringify({ title, description, tag }),
     });
     const note = await response.json();
-    console.log(note);
     setNotes(notes.concat(note));
   };
 
@@ -48,15 +46,10 @@ const NoteState = ({ children }) => {
     const json = await response.json();
     console.log(json.note._id);
 
-    const deletedNoteIndex = notes.findIndex(x => x._id === json.note._id);
-    console.log(deletedNoteIndex);
-
-    notes.splice(deletedNoteIndex, 1);
-
-    // let newNotes = notes.filter((note) => {
-    //   return note._id !== id;
-    // });
-    getNotes();
+    let newNotes = notes.filter((note) => {
+      return note._id !== id;
+    });
+    setNotes(newNotes);
   };
 
   //Edit an existing note

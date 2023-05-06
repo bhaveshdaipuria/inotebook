@@ -5,7 +5,6 @@ const NoteState = ({ children }) => {
   const host = "http://localhost:9000";
   const notesInitial = [];
   const [notes, setNotes] = useState(notesInitial);
-  
   //Get notes
   const getNotes = async () => {
     const response = await fetch(`${host}/api/notes/fetchallnotes/`, {
@@ -52,6 +51,8 @@ const NoteState = ({ children }) => {
     console.log(deletedNoteIndex);
 
     notes.splice(deletedNoteIndex, 1);
+    const newNotes = notes;
+    console.log(notes);
 
     // let newNotes = notes.filter((note) => {
     //   return note._id !== id;

@@ -7,6 +7,7 @@ const Noteitem = (props) => {
     const context = useContext(noteContext);
     const { deleteNote } = context;
     const { note, updateNote } = props;
+    console.log(note.tag);
     return (
         <>
         <div className="col-md-3">
@@ -19,7 +20,7 @@ const Noteitem = (props) => {
                     </div>
                     <p className="card-text">{note.description}</p>
                 </div>
-                <Badge tagProp={note.tag}/>
+                <Badge tagProp='Bhavesh/>
             </div>
         </div>
         </>

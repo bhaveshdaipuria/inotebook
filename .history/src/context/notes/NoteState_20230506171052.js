@@ -84,6 +84,7 @@ const NoteState = ({ children }) => {
       }
     }
     setNotes(newNotes);
+    console.log(notes);
   };
 
   return (

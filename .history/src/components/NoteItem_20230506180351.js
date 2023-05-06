@@ -4,9 +4,11 @@ import Badge from './Badge';
 
 
 const Noteitem = (props) => {
+    console.log(note);
     const context = useContext(noteContext);
     const { deleteNote } = context;
     const { note, updateNote } = props;
+    console.log(note.tag);
     return (
         <>
         <div className="col-md-3">
