@@ -30,7 +30,7 @@ const Notes = (props) => {
     }
 
     const onChange = (e)=>{
-        setNote({...note, [e.target.name]: e.target.value})
+        setNote({...note, [e.target.name]: e.target.value});
     }
 
     return (
@@ -75,7 +75,7 @@ const Notes = (props) => {
                 {notes.length===0 && 'No notes to display'}
                 </div>
                 {notes.map((note) => {
-                    return <NoteItem key={note._id} updateNote={updateNote} showAlert = {props.showAlert} note={note} />
+                    return <NoteItem key={note._id} updateNote={updateNote} note={note} />
                 })}
             </div>
         </>

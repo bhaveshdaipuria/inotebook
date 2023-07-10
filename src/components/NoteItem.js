@@ -3,10 +3,10 @@ import noteContext from "../context/notes/noteContext";
 import Badge from './Badge';
 
 
-const Noteitem = (props) => {
+function NoteItem({note, updateNote}){
     const context = useContext(noteContext);
     const { deleteNote } = context;
-    const { note, updateNote } = props;
+    // const { note, updateNote } = props;
     return (
         <>
         <div className="col-md-3">
@@ -27,4 +27,4 @@ const Noteitem = (props) => {
     )
 }
 
-export default Noteitem
+export default NoteItem
